@@ -1,0 +1,9 @@
+Patient ID,Race,Diagnosis,Actual Amount
+1,Caucasian,Cardiology,85.0
+2,African American,Cardiology,72.0
+3,Asian,Cardiology,88.0
+4,Hispanic,Cardiology,75.0
+5,Caucasian,Neurology,82.0
+6,African American,Neurology,68.0
+7,Asian,Neurology,85.0
+8,Hispanic,Neurology,70.0
