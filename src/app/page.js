@@ -47,6 +47,7 @@ export default function WelcomePage() {
       <div className="relative z-10 w-full">
         {/* Hero Section */}
         <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center pt-20">
+          <div className="stagger-children flex flex-col items-center">
             <div className="mb-10 w-32 h-32 relative animate-slow-float">
               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
               <Image 
