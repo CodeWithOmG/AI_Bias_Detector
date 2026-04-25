@@ -1,0 +1,11 @@
+Patient_ID,Ethnicity,Health_Severity_Index,Past_Year_Spending,Priority_Care_Assignment
+1,Minority_Group,2,46709,1
+2,Minority_Group,4,1659,0
+3,Minority_Group,8,20951,1
+4,Majority_Group,9,21263,1
+5,Majority_Group,4,20591,1
+6,Minority_Group,5,39817,1
+7,Majority_Group,2,4326,0
+8,Majority_Group,9,5704,1
+9,Majority_Group,3,47851,1
+10,Minority_Group,6,22493,1

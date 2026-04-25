@@ -1,5 +1,5 @@
 /**
- * Shared type definitions for the Antigravity AI Fairness platform.
+ * Shared type definitions for the FairMIND Fairness platform.
  * These mirror the Pydantic models from the original FastAPI backend.
  */
 
