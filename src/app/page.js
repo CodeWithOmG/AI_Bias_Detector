@@ -49,10 +49,11 @@ export default function WelcomePage() {
         <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center pt-20">
             <div className="mb-10 w-32 h-32 relative animate-slow-float">
               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-              <img 
+              <Image 
                 src="/logo.png" 
                 alt="FairMIND Logo" 
-                className="w-full h-full object-cover rounded-[2rem] border border-white/10 shadow-2xl relative z-10"
+                fill
+                className="object-cover rounded-[2rem] border border-white/10 shadow-2xl relative z-10"
               />
             </div>
 

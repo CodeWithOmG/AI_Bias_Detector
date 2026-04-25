@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV_ITEMS = [
   { id: "dashboard", label: "Dashboard", icon: "shield_with_heart" },
@@ -30,10 +31,11 @@ export default function Navbar({ activeTab, setActiveTab, selectedDomain, setSel
         {/* Brand */}
         <Link href="/" className="flex items-center gap-3 px-4 pr-6 border-r border-outline-variant/30 mr-1 hover:opacity-80 transition-all cursor-pointer group">
           <div className="relative w-8 h-8 rounded-lg overflow-hidden shadow-sm group-hover:scale-110 transition-transform duration-300">
-            <img 
+            <Image 
               src="/logo.png" 
               alt="FairMIND Logo" 
-              className="w-full h-full object-cover"
+              fill
+              className="object-cover"
             />
           </div>
           <div className="flex flex-col leading-none">
