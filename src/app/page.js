@@ -47,9 +47,17 @@ export default function WelcomePage() {
       <div className="relative z-10 w-full">
         {/* Hero Section */}
         <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center pt-20">
-          <div className="stagger-children flex flex-col items-center">
-            <h1 className="font-serif text-7xl sm:text-9xl font-normal tracking-tighter text-white mb-8 animate-text-glow">
-              Fair<span className="text-primary-container italic">MIND</span>
+            <div className="mb-10 w-32 h-32 relative animate-slow-float">
+              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
+              <img 
+                src="/logo.png" 
+                alt="FairMIND Logo" 
+                className="w-full h-full object-cover rounded-[2rem] border border-white/10 shadow-2xl relative z-10"
+              />
+            </div>
+
+            <h1 className="font-serif text-7xl sm:text-9xl font-normal tracking-tighter text-white mb-8 animate-text-glow leading-none">
+              Fair<span className="text-primary italic">MIND</span>
             </h1>
 
             <p className="text-xl sm:text-2xl max-w-2xl mx-auto mb-14 leading-relaxed text-white/60">

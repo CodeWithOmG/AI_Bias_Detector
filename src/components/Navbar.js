@@ -28,19 +28,22 @@ export default function Navbar({ activeTab, setActiveTab, selectedDomain, setSel
         }}
       >
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-2 px-4 pr-6 border-r border-outline-variant/30 mr-1 hover:opacity-80 transition-opacity cursor-pointer">
-          <span className="font-serif text-lg font-medium tracking-tight text-primary">
-            Fair
-          </span>
-          <span
-            className="text-[0.625rem] font-sans font-bold uppercase tracking-widest px-2 py-0.5 rounded-full"
-            style={{
-              background: "linear-gradient(135deg, var(--primary), var(--secondary))",
-              color: "white",
-            }}
-          >
-            MIND
-          </span>
+        <Link href="/" className="flex items-center gap-3 px-4 pr-6 border-r border-outline-variant/30 mr-1 hover:opacity-80 transition-all cursor-pointer group">
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden shadow-sm group-hover:scale-110 transition-transform duration-300">
+            <img 
+              src="/logo.png" 
+              alt="FairMIND Logo" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col leading-none">
+            <span className="font-serif text-lg font-medium tracking-tight text-on-surface">
+              Fair<span className="text-primary italic">MIND</span>
+            </span>
+            <span className="text-[10px] font-sans font-bold uppercase tracking-[0.2em] text-on-surface-variant opacity-60">
+              Intelligence
+            </span>
+          </div>
         </Link>
 
         {/* Nav Items */}

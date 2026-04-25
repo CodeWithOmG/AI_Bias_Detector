@@ -16,9 +16,12 @@ const newsreader = Newsreader({
 });
 
 export const metadata = {
-  title: "FairMIND — Fairness Platform",
+  title: "FairMIND — Intelligence & Fairness Platform",
   description:
     "Universal AI Fairness & Bias Detection Platform. Scrutinize AI models and datasets for discriminatory patterns with weightless precision.",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -29,6 +32,7 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${newsreader.variable} h-full antialiased`}
     >
       <head>
+        <link rel="icon" href="/logo.png" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
