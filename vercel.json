@@ -1,11 +1,9 @@
 {
   "experimentalServices": {
     "backend": {
-      "rootDirectory": "backend",
       "framework": "fastapi"
     },
     "frontend": {
-      "rootDirectory": "./",
       "framework": "nextjs"
     }
   }
