@@ -2,6 +2,7 @@
   "experimentalServices": {
     "backend": {
       "framework": "fastapi",
+      "mount": "backend",
       "routePrefix": "/api"
     },
     "frontend": {
