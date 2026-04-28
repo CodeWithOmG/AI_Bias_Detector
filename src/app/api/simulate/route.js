@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-
+import { GoogleGenerativeAI } from "@google/generative-ai";
 /**
  * POST /api/simulate
  * Takes audit results and simulates what each mitigation strategy
@@ -94,6 +94,22 @@ export async function POST(request) {
       };
     });
 
+    let aiInsight = null;
+    try {
+      const apiKey = process.env.GEMINI_API_KEY;
+      if (apiKey) {
+        const genAI = new GoogleGenerativeAI(apiKey.replace(/['"]+/g, '')); // Strip quotes just in case
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        
+        const prompt = `You are an AI fairness auditor. A dataset was audited and received an overall fairness score of ${baseFairness}/100. The recommended mitigation strategy is ${recommended.name}. In 2 short sentences, explain why this strategy is best for improving fairness without destroying accuracy.`;
+        
+        const result = await model.generateContent(prompt);
+        aiInsight = result.response.text();
+      }
+    } catch (e) {
+      console.warn("[Simulation API] Gemini API error:", e);
+    }
+
     return NextResponse.json({
       strategies,
       recommendedId: recommended.id,
@@ -104,23 +120,12 @@ export async function POST(request) {
       afterAccuracy: recommended.accuracy,
       improvementDelta: round(recommended.fairness - baseFairness),
       categoryProjections,
+      aiInsight,
     });
   } catch (error) {
     console.error("[Simulation API] Simulation Error:", error);
     return NextResponse.json({ detail: "Internal simulation error. Please try again." }, { status: 500 });
   }
-
-  return NextResponse.json({
-    strategies,
-    recommendedId: recommended.id,
-    recommendedName: recommended.name,
-    baselineAccuracy: round(baseAccuracy),
-    baselineFairness: round(baseFairness),
-    afterFairness: recommended.fairness,
-    afterAccuracy: recommended.accuracy,
-    improvementDelta: round(recommended.fairness - baseFairness),
-    categoryProjections,
-  });
 }
 
 

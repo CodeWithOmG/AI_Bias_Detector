@@ -9,6 +9,7 @@ export default function ModelInspection({ analysisResult }) {
   const [strategies, setStrategies] = useState(null);
   const [recommendedId, setRecommendedId] = useState(null);
   const [recommendedName, setRecommendedName] = useState("");
+  const [aiInsight, setAiInsight] = useState("");
   const [categoryProjections, setCategoryProjections] = useState(null);
   const [afterFairness, setAfterFairness] = useState(0);
   const [afterAccuracy, setAfterAccuracy] = useState(0);
@@ -42,6 +43,7 @@ export default function ModelInspection({ analysisResult }) {
           setStrategies(data.strategies);
           setRecommendedId(data.recommendedId);
           setRecommendedName(data.recommendedName || "");
+          setAiInsight(data.aiInsight || "");
           setCategoryProjections(data.categoryProjections || null);
           setAfterFairness(data.afterFairness || 0);
           setAfterAccuracy(data.afterAccuracy || 0);
@@ -196,6 +198,17 @@ export default function ModelInspection({ analysisResult }) {
           beforeAccuracy={Math.round(baselineAccuracy)}
           afterAccuracy={Math.round(afterAccuracy)}
         />
+      )}
+
+      {/* Gemini AI Insight */}
+      {hasData && aiInsight && (
+        <div className="glass-card p-6 mb-8 border-l-4" style={{ borderLeftColor: "#4285F4" }}>
+          <div className="flex items-center gap-2 mb-2">
+            <span className="material-symbols-outlined text-[20px]" style={{ color: "#4285F4" }}>auto_awesome</span>
+            <h3 className="font-serif text-lg text-on-surface">Gemini Insight</h3>
+          </div>
+          <p className="text-on-surface-variant text-sm leading-relaxed">{aiInsight}</p>
+        </div>
       )}
 
       {/* Strategy insight cards */}
